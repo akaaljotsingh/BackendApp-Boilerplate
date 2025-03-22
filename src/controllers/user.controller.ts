@@ -24,7 +24,7 @@ export const getUserById = async (req: Request, res: Response): Promise<void> =>
     const user = await userService.getUserById(req.params.id);
     if (!user) {
       res.status(404).json({ message: 'User not found' });
-      return; // ← this makes it clean, no value returned
+      return;
     }
     res.status(200).json(user);
   } catch (error: any) {
